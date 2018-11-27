@@ -1,0 +1,19 @@
+//creating a variable
+$item-padding: 1em;
+
+ion-item.task{
+  --color: orange;
+  --background: lightyellow;
+  --inner-padding-start: $item-padding;
+  --inner-padding-end: $item-padding;
+  --inner-padding-top: $item-padding;
+  --inner-padding-bottom: $item-padding;
+}
+
+ion-item.task.done{
+  --background:lightblue;
+}
+
+ion-item h2.name{
+  font-weight: 600;
+}
