@@ -147,7 +147,24 @@ export class HomePage {
 
  //screenshot the page
  screenShot(){
-   
+   // Take a screenshot and save to file
+  /*
+   this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(
+    (success)=>{
+      
+    },
+    (error) => {});
+  */
+
+    // Take a screenshot and get temporary file URI (gets a string of the image)
+    this.screenshot.URI(80).then((success)=>{
+      console.log('Success!');
+    },
+    (error)=>{
+      console.error(error);
+    });
+
+  
 }
 
 
