@@ -1,38 +1,42 @@
 <ion-header> <!-- cmd + / : to comment the code out-->
   <ion-toolbar>
-    <ion-title>Home</ion-title>
+    <ion-title slot="primary">{{title}}</ion-title>
+    <ion-img slot="secondary" class="logo" src="../assets/shopIcon.png"></ion-img>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list type="true">
-    <ion-item>
-      <ion-input type="text" placeholder="add a task" [(ngModel)]="taskInput"></ion-input>
-    </ion-item>
+  <form id="task-form" (submit)="addTask()" (keyup.enter)="addTask()">
+    <ion-input type="text" placeholder="add a task" [(ngModel)]="taskInput" name="task-input"></ion-input>
+    <ion-button shape="round" type="submit" color="secondary" fill="outline" expand="block">
+      Add Item
+    </ion-button>
+  </form>
 
-    <ion-item>
-      <ion-button color="primary" fill="solid" (click) = "addTask()">Add</ion-button>
-    </ion-item>
+  <ion-list>
+    <ion-item *ngFor="let task of tasks" (click)="changeStatus(task.date)" [class.done] = "task.status">
+      <!--<ion-checkbox slot="start" [checked] = "task.status" ></ion-checkbox>-->
+      <ion-label>
+        <ion-text>{{task.name}}</ion-text>
+        <p>{{ formatDate(task.date) }}</p>
+      </ion-label>
+    
+      <ion-button *ngIf="task.status" fill="clear" (click)="deleteItem(task.date)">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+  </ion-item>
   </ion-list>
 
-    <ion-list>
-      <ion-item *ngFor = "let item of tasks" class="task" [class.done] = "item.status" (click) = "changeStatus(item.date)">
-        <ion-label>
-          <ion-text>
+  <!-- fab placed to the (vertical) center and end -->
+  
+<ion-fab vertical="Bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-            <h2 class="name">{{item.name}}</h2>
-
-          </ion-text>
-
-            <p>{{formatDate(item.date)}}</p>
-
-        </ion-label>
-        <!-- <ion-checkbox slot="end" [checked] = "item.status" (click) = "changeStatus(item.date)"></ion-checkbox> -->
-        <ion-button color="clear" slot="end" *ngIf="item.status" (click) = "deleteItem(item.date)"> <!--*ngIf="item.status": if item's status is true -->
-          <ion-icon name="close"></ion-icon>
-        </ion-button>
-
-      </ion-item>
-    </ion-list>
 
 </ion-content>
+
+      
+

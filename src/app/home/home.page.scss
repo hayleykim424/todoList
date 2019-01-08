@@ -1,19 +1,34 @@
 //creating a variable
 $item-padding: 1em;
-
+ion-img.logo{
+  max-width: 40px;
+}
 ion-item.task{
-  --color: orange;
-  --background: lightyellow;
+  --background:lightyellow;
   --inner-padding-start: $item-padding;
   --inner-padding-end: $item-padding;
   --inner-padding-top: $item-padding;
   --inner-padding-bottom: $item-padding;
 }
-
-ion-item.task.done{
-  --background:lightblue;
+ion-item.done{
+  --background:#F0FFFF;
+  opacity: 0.5;
+  h2.name{
+    text-decoration: line-through;
+  }
+}
+ion-item h2.name{
+  font-weight: 400;
 }
 
-ion-item h2.name{
-  font-weight: 600;
+ion-item{
+  ion-checkbox{
+    button{
+      width: 60%;
+    }
+  }
+  ion-button{
+    position:relative;
+    z-index: 999999;
+  }
 }
