@@ -158,10 +158,10 @@ export class HomePage {
 
     // Take a screenshot and get temporary file URI (gets a string of the image)
     this.screenshot.URI(80).then((success)=>{
-      console.log('Success!');
+      console.log('Success! your URI: ', success.URI);
     },
     (error)=>{
-      console.error(error);
+      console.error('Error!', error);
     });
 
   
