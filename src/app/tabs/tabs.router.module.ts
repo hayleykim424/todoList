@@ -21,8 +21,22 @@ const routes: Routes = [
         path: 'home',
         outlet: 'home',
         component: HomePage
+      },
+      {
+        path: 'about',
+        outlet: 'about',
+        component: AboutPage
+      },
+      {
+        path: 'contact',
+        outlet: 'contact',
+        component: ContactPage
+      },
+      {
+        path: 'list',
+        outlet: 'list',
+        component: ListPage
       }
-      
     ]
   },
   {

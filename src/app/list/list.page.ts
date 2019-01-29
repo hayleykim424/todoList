@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 
 @Component({
   selector: 'app-list',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.page.scss'],
 })
 export class ListPage implements OnInit {
+  title:string = 'Train your pet!';
 
-  constructor() { }
+  constructor(
+    //private youtube: YoutubeVideoPlayer
+  ) 
+  {
+    //this.youtube.openVideo('myvideoid');
+  }
+
 
   ngOnInit() {
   }

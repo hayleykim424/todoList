@@ -11,10 +11,10 @@ import { Screenshot } from '@ionic-native/screenshot/ngx';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-  title:string = 'Shopping List';
+  title:string = 'Puppies in Home';
   tasks:Array<Task> = [];
   taskInput:string = '';
-  listTitle = 'Shopping List';
+  listTitle = 'Puppies in Home';
   now:number;
 
   //dataService -> variable name. DataService -> type

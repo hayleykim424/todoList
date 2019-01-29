@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 
 import { Screenshot } from '@ionic-native/screenshot/ngx';
 
+import { Camera } from '@ionic-native/camera';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
