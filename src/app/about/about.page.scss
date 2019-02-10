@@ -2,3 +2,32 @@ $item-padding: 1em;
 ion-img.logo{
   max-width: 40px;
 }
+
+.trainingDiv{
+  border-bottom: 1px solid #B1B3B3;
+}
+
+.trainingTitle{
+  font-size: 18px;
+  font-weight: bold;
+  color:#298FC2;
+  width: 100%;
+  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.trainigContent {
+  padding-left:10px;
+  padding-right:10px;
+  text-align: justify;
+}
+
+.imgDiv{
+  text-align: center;
+}
+.trainigImgContent{
+  display: inline-block;
+  width: 80%;
+  height: 150px;
+}

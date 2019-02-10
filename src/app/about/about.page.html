@@ -5,4 +5,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+      <ion-searchbar name="searchTerm" [formControl]="searchInput">
+      </ion-searchbar>
+    
+    
+    <ion-list>
+      <ion-item *ngIf="searching==true">
+          <p>You searched for {{searchTerm}}</p>
+      </ion-item>
+      <div class="trainingDiv" *ngFor="let training of pageItems">
+        <div class="trainingTitle">{{training.title}}</div>
+        <div class="imgDiv">
+            <p class="trainigImgContent"><img src="{{training.img}}"></p>
+        </div>
+        <p class="trainigContent">{{training.word}}</p>
+        
+      </div>
+    </ion-list>
+
+
+</ion-content>
